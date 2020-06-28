@@ -4,7 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-black = "*"
 
 [packages]
 flask = "*"
@@ -12,6 +11,7 @@ psycopg2 = "*"
 psycopg2-binary = "*"
 flask-sqlalchemy = "*"
 gunicorn = "*"
+black = "*"
 
 [requires]
 python_version = "3.7"
