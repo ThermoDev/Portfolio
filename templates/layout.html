@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Thermodev Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</head>
+
+<body>
+    <div class="ui inverted menu" style="height: 50px;">
+        <a class="header item">Thermo-Dev Portfolio</a>
+        <a class="item">Home</a>
+        <a class="item">About</a>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui transparent inverted icon input">
+                    <i class="search icon"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+            <a class="item">Link</a>
+        </div>
+    </div>
+
+    <div class="ui container" style="padding: 10px;">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>
