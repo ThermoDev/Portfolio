@@ -4,30 +4,35 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Thermodev Portfolio</title>
+    <title>ThermoDev Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Semantic-UI CSS -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <!-- jQuery and Semantic-UI JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="{{ url_for('static', filename='public/css/home.css') }}" />
+
+    <!-- Fotorama from CDNJS, 19 KB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 </head>
 
 <body>
-    <div class="ui inverted menu" style="height: 50px;">
-        <a class="header item">Thermo-Dev Portfolio</a>
-        <a class="item">Home</a>
-        <a class="item">About</a>
+    {% if not index %}
+    <div class="ui fixed inverted menu" style="height: 50px;">
+        <a class="header item" href="/">ThermoDev Portfolio</a>
+        <a class="item" href="/">Home</a>
+        <a class="item" href="form">Form</a>
         <div class="right menu">
-            <div class="item">
-                <div class="ui transparent inverted icon input">
-                    <i class="search icon"></i>
-                    <input type="text" placeholder="Search">
-                </div>
-            </div>
             <a class="item">Link</a>
         </div>
     </div>
+    {% endif %}
 
-    <div class="ui container" style="padding: 10px;">
+    <div id="{{ 'index' if index else 'contents' }}" class="ui main container" style="padding: 10px;">
         {% block content %}{% endblock %}
     </div>
 </body>

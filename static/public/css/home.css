@@ -1,0 +1,57 @@
+body {
+  /* background-color: black; */
+  margin: 0;
+  /* color: white; */
+}
+
+#main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-image: url('../images/background.jpg');
+  background-position: center;
+  text-align: center;
+}
+
+#contents {
+    margin-top: 5em;
+}
+
+p {
+  font-size: 14px;
+}
+
+.project-text {
+  display: inline-flex;
+}
+
+.fotorama__wrap {
+  margin: auto;
+}
+
+#index {
+  display: contents;
+  padding: 10px;
+}
+
+#project_link {
+  font-size: 150%;
+}
+
+#index_title {
+  color: white;
+  text-shadow: 0 0 5px black;
+  font-size: 50px;
+}
+
+#project_title {
+  text-align: center;
+}
+
+.middle-text {
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+}

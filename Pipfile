@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 black="*"
+pylint = "*"
 
 [packages]
 flask = "*"
@@ -16,3 +17,6 @@ black = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
