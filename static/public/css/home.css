@@ -10,13 +10,14 @@ body {
   align-items: center;
   justify-content: center;
   background-size: cover;
-  background-image: url('../images/background.jpg');
+  background-image: url('../images/background-transparent.png');
+  background-color: black;
   background-position: center;
   text-align: center;
 }
 
 #contents {
-    margin-top: 5em;
+  margin-top: 5em;
 }
 
 p {
@@ -38,12 +39,24 @@ p {
 
 #project_link {
   font-size: 150%;
+  border: 1px solid #ccc;
 }
 
 #index_title {
   color: white;
-  text-shadow: 0 0 5px black;
+  text-shadow: 4px 4px black;
   font-size: 50px;
+}
+
+#sub_index_title {
+  color: white;
+  text-shadow: 1px 1px black;
+  padding: 25px;
+}
+
+
+#sub_index_title h2 {
+    font-weight: 100;
 }
 
 #project_title {
@@ -58,5 +71,5 @@ p {
 }
 
 .fotorama__stage__frame.fotorama__loaded.fotorama__loaded--img {
-    border: 1px solid #ccc;
+  border: 1px solid #ccc;
 }
