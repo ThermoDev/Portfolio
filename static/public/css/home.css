@@ -48,10 +48,15 @@ p {
 
 #project_title {
   text-align: center;
+  padding-bottom: 25px;
 }
 
 .middle-text {
   margin: auto;
   max-width: 500px;
   text-align: center;
+}
+
+.fotorama__stage__frame.fotorama__loaded.fotorama__loaded--img {
+    border: 1px solid #ccc;
 }
