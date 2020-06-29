@@ -1,13 +1,12 @@
 body {
-  /* background-color: black; */
   margin: 0;
-  /* color: white; */
 }
 
 .fill {
   height: 100%;
 }
 
+/* Main Content for the Index Page */
 #main {
   height: 100%;
   display: flex;
@@ -76,10 +75,13 @@ p {
 
 .middle-text {
   margin: auto;
-  max-width: 500px;
   text-align: center;
 }
 
 .fotorama__stage__frame.fotorama__loaded.fotorama__loaded--img {
+  border: 1px solid #ccc;
+}
+
+.img-fluid {
   border: 1px solid #ccc;
 }
