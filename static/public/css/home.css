@@ -4,6 +4,10 @@ body {
   /* color: white; */
 }
 
+.fill {
+  height: 100%;
+}
+
 #main {
   height: 100%;
   display: flex;
@@ -36,6 +40,12 @@ p {
   display: contents;
   padding: 10px;
 }
+
+
+#project_link:hover {
+  background-color: black;
+}
+
 
 #project_link {
   font-size: 150%;

@@ -5,15 +5,14 @@ verify_ssl = true
 
 [dev-packages]
 black="*"
-pylint = "*"
+packapylint = "*"
 
 [packages]
 flask = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
 flask-sqlalchemy = "*"
-gunicorn = "*"
-black = "*"
+gunicock = "*"
 
 [requires]
 python_version = "3.7"
