@@ -15,41 +15,60 @@
     <link rel="stylesheet" type="text/css" media="screen"
         href="{{ url_for('static', filename='public/css/home.css') }}" />
 
-
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='font-awesome/css/fontawesome.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font-awesome/css/brands.min.css') }}" />
 
     <!-- jQuery and Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
 
-    <!-- Fotorama from CDNJS, 19 KB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
-
+    <script src="{{ url_for('static', filename='font-awesome/js/fontawesome.min.js') }}"></script>
 </head>
 
 <body class="{{ 'fill' if index else 'normal' }}">
     {% if not index %}
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Michael Pegios</a>
+        <a class="navbar-brand" href="/projects">Michael Pegios</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/form">Form</a>
+                    <a class="nav-link {{ 'active' if active == 'form' else '' }}" href="/form">Contact Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/projects">Projects</a>
+                    <a class="nav-link {{ 'active' if active == 'projects' else '' }}" href="/projects">Projects</a>
+                </li>
+            </ul>
+            <div class="dropdown-divider"></div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/michael-pegios-187355105/">
+                        <i class="fab fa-linkedin-in"> LinkedIn</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/ThermoDev?tab=repositories">
+                        <i class="fab fa-github"> Github</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://codepen.io/Thermodev">
+                        <i class="fab fa-codepen"> Codepen</i>
+                    </a>
                 </li>
             </ul>
         </div>
+
     </nav>
     {% endif %}
 

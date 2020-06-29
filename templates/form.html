@@ -1,20 +1,19 @@
 {% extends "layout.html" %}
+{% set active = 'form' %}
 {% block content%}
-<form class="ui form">
-    <div class="field">
-        <label>First Name</label>
-        <input type="text" name="first-name" placeholder="First Name">
-    </div>
-    <div class="field">
-        <label>Last Name</label>
-        <input type="text" name="last-name" placeholder="Last Name">
-    </div>
-    <div class="field">
-        <div class="ui checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>I agree to the Terms and Conditions</label>
+<h1 id="title">Contact Me!</h1>
+<div class="container" id="form">
+    <form class="form-horizontal" action="/">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Name" for="name" required>
         </div>
-    </div>
-    <button class="ui button" type="submit">Submit</button>
-</form>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email" for="email" required>
+        </div>
+        <div class="input-group mb-3">
+            <textarea class="form-control" placeholder="Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary float-right">Submit</button>
+    </form>
+</div>
 {% endblock content %}

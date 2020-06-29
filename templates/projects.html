@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
+{% set active = 'projects' %}
 {% block content%}
-<h1 id="project_title">Projects</h1>
+<h1 id="title">Projects</h1>
 
 <div class="container">
     <div class="row middle-text">
         <div class="bd-example col-sm">
             <a href="https://thermodev.github.io/video-search/" target="_blank">
-                <img src="../static/public/images/projects/video-search/project.gif" class="img-fluid" href="/" />
+                <img src="{{ url_for('static', filename='public/images/projects/video-search/project-min.gif') }}" class="img-fluid" href="/" />
             </a>
         </div>
         <div class="col-sm">

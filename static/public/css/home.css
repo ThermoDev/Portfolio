@@ -40,11 +40,9 @@ p {
   padding: 10px;
 }
 
-
 #project_link:hover {
   background-color: black;
 }
-
 
 #project_link {
   font-size: 150%;
@@ -63,14 +61,19 @@ p {
   padding: 25px;
 }
 
-
 #sub_index_title h2 {
-    font-weight: 100;
+  font-weight: 100;
 }
 
-#project_title {
+/* Title shown on each page */
+#title {
   text-align: center;
   padding-bottom: 25px;
+}
+
+/* Conforms the form to have a smaller width */
+#form {
+  max-width: 750px;
 }
 
 .middle-text {
@@ -84,4 +87,8 @@ p {
 
 .img-fluid {
   border: 1px solid #ccc;
+}
+
+textarea.form-control {
+  min-height: 150px;
 }
