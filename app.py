@@ -15,6 +15,10 @@ def form():
 def projects():
     return render_template("projects.html")
 
+@app.route("/react")
+def react():
+    return render_template("react.html")
+
 @app.route("/submit", methods=["POST"])
 def submit():
     if request.method == "POST":
