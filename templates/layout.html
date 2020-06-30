@@ -16,7 +16,8 @@
         href="{{ url_for('static', filename='public/css/home.css') }}" />
 
     <!-- Font-Awesome -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 
     <!-- jQuery and Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
@@ -26,8 +27,7 @@
 </head>
 
 <body class="{{ 'fill' if index else 'normal' }}">
-    {% if not index %}
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav id ="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
         <a class="navbar-brand" href="/projects">Michael Pegios</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,12 +66,23 @@
         </div>
 
     </nav>
-    {% endif %}
 
     <div id="{{ 'index' if index else 'contents' }}" class="ui main container" style="padding: 10px;">
         {% block content %}{% endblock %}
     </div>
+    <script>
+        window.onscroll = function () {
+            scrollFunction()
+        };
 
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById("navbar").style.backgroundColor = "#000000";
+            } else {
+                document.getElementById("navbar").style.background = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

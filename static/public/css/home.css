@@ -1,22 +1,53 @@
 body {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
+/* Fill in this space 100% */
 .fill {
   height: 100%;
 }
 
+/* Change the background color on mobile devices to black */
+/* Set as important as scripts prevent overwriting */
+@media (max-width: 767px) {
+  .navbar.navbar-expand-md.navbar-dark.fixed-top{
+    background-color: black !important;
+  }
+}
 /* Main Content for the Index Page */
+/* Applying Linear Gradient to black  */
+/* Also ensuring contents remain in the center */
 #main {
   height: 100%;
-  display: flex;
+  width: 100%;
+  display: table;
   align-items: center;
   justify-content: center;
   background-size: cover;
-  background-image: url('../images/background-transparent.png');
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.5) 75%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url(../images/background-transparent.png);
   background-color: black;
   background-position: center;
   text-align: center;
+}
+
+#main_cell {
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+#projects-contents {
+  padding-top: 25px;
+  color: black;
+  background-color: white;
 }
 
 #contents {
@@ -52,21 +83,23 @@ p {
 #index_title {
   color: white;
   text-shadow: 4px 4px black;
-  font-size: 50px;
 }
 
+/* Sub Index Title Styling */
 #sub_index_title {
   color: white;
-  text-shadow: 1px 1px black;
+  text-shadow: 1px 1px blacnavbar navbar-expand-md navbar-dark fixed-topk;
   padding: 25px;
+  max-width: 800px;
 }
 
-#sub_index_title h2 {
+/* Modify h3 to have font-weight of 100, should be downloaded already. */
+#sub_index_title h3 {
   font-weight: 100;
 }
 
 /* Title shown on each page */
-#title {
+.title {
   text-align: center;
   padding-bottom: 25px;
 }
@@ -81,14 +114,19 @@ p {
   text-align: center;
 }
 
-.fotorama__stage__frame.fotorama__loaded.fotorama__loaded--img {
-  border: 1px solid #ccc;
-}
 
 .img-fluid {
   border: 1px solid #ccc;
+  /* Before Images are loaded */
+  min-height: 150px;
+  min-width: 150px;
 }
 
 textarea.form-control {
   min-height: 150px;
+}
+
+#navbar {
+  transition-duration: 0.25s;
+  transition-timing-function: linear;
 }

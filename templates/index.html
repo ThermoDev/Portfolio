@@ -2,18 +2,80 @@
 {% set index =  True %}
 {% block content%}
 <div id="main">
-    <div>
+    <div id="main_cell">
         <h1 id="index_title">Welcome to my Portfolio!</h1>
         <div id="sub_index_title" class="ui container">
-            <h2>
+            <h3>
                 Hi, I'm Michael Pegios!
                 I am a Software Engineer and a Computer Science graduate from University of New South Wales.
-            </h2>
+            </h3>
         </div>
-        <a href="/projects">
+        <a href="#projects">
             <button id="project_link" type="button" class="btn btn-dark">View Projects</button>
         </a>
     </div>
 </div>
+
+<div id="projects-contents">
+    <h1 id="projects" class="title">Projects</h1>
+
+    <div  class="container">
+        <div class="row middle-text">
+            <div class="bd-example col-sm">
+                <a href="https://thermodev.github.io/video-search/" target="_blank">
+                    <img src="{{ url_for('static', filename='public/images/projects/video-search/project.gif') }}"
+                        class="img-fluid" href="/" />
+                </a>
+            </div>
+            <div class="col-sm">
+                <h3>Video Search</h3>
+                <p>
+                    A One Page Application that uses React to create Async/Await Axios requests to the Youtube API.
+                    The search results propagate the video list which is stored in state.
+                    Clicking on a video updates the selected video in state, which calls the render method with the
+                    selected video parsed to the VideoPlayer component, which then displays the Youtube video.
+                </p>
+                <a href="https://github.com/ThermoDev/video-search" class="btn btn-primary" target="_blank">
+                    View Code
+                </a>
+                <a href="https://thermodev.github.io/video-search/" class="btn btn-primary" target="_blank">
+                    View Demo
+                </a>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row middle-text">
+            <div class="bd-example col-sm">
+                <a href="https://thermo-vue-todo.netlify.app/" target="_blank">
+                    <img src="{{ url_for('static', filename='public/images/projects/vue-todo/project.gif') }}"
+                        class="img-fluid" href="/" />
+                </a>
+            </div>
+            <div class="col-sm">
+                <h3>Todo App</h3>
+                <p>
+                    A TODO app made using Vue.js.
+                </p>
+                <p>
+                    This app makes Async/Await requests to <a
+                        href="https://jsonplaceholder.typicode.com/">jsonplaceholder</a>
+                    and allows for pseudo CRUD operations to be performed.
+                </p>
+                <a href="https://github.com/ThermoDev/vue-todo" class="btn btn-primary" target="_blank">
+                    View Code
+                </a>
+                <a href="https://thermo-vue-todo.netlify.app/" class="btn btn-primary" target="_blank">
+                    View Demo
+                </a>
+            </div>
+        </div>
+
+        <hr />
+
+    </div>
+</div>
+
 
 {% endblock content %}
