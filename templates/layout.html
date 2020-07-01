@@ -26,8 +26,8 @@
     </script>
 </head>
 
-<body class="{{ 'fill' if index else 'normal' }}">
-    <nav id ="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+<body class="{{ 'fill' if index else 'normal' }}" data-spy="scroll" data-offset="150" data-target=".navbar">
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
         <a class="navbar-brand" href="/projects">Michael Pegios</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,13 +36,13 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="#main">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ 'active' if active == 'form' else '' }}" href="/form">Contact Me</a>
+                    <a class="nav-link {{ 'active' if active == 'projects' else '' }}" href="#projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ 'active' if active == 'projects' else '' }}" href="/projects">Projects</a>
+                    <a class="nav-link {{ 'active' if active == 'form' else '' }}" href="#form">Contact Me</a>
                 </li>
             </ul>
             <div class="dropdown-divider"></div>
@@ -64,12 +64,23 @@
                 </li>
             </ul>
         </div>
-
     </nav>
+
 
     <div id="{{ 'index' if index else 'contents' }}" class="ui main container" style="padding: 10px;">
         {% block content %}{% endblock %}
     </div>
+
+    <footer class="text-light bg-dark">
+        <div class="container">
+            <p class="float-right">
+                <a class="nav-link" href="#main">Back to top</a>
+            </p>
+            <p><em>michael.pegios@hotmail.com</em></p>
+        </div>
+    </footer>
+
+
     <script>
         window.onscroll = function () {
             scrollFunction()
