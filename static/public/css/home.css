@@ -4,6 +4,7 @@ html {
 
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Fill in this space 100% */
@@ -96,19 +97,16 @@ p {
 #index_title {
   color: white;
   text-shadow: 4px 4px black;
+  font-weight: 700;
 }
 
 /* Sub Index Title Styling */
 #sub_index_title {
   color: white;
-  text-shadow: 1px 1px blacnavbar navbar-expand-md navbar-dark fixed-topk;
+  text-shadow: 1px 1px black;
   padding: 25px;
   max-width: 800px;
-}
-
-/* Modify h3 to have font-weight of 100, should be downloaded already. */
-#sub_index_title h3 {
-  font-weight: 100;
+  font-weight: 300;
 }
 
 /* Title shown on each page */
