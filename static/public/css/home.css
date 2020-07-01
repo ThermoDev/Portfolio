@@ -143,6 +143,15 @@ textarea.form-control {
   transition-timing-function: linear;
 }
 
+#top_link:hover{
+  color: white;
+}
+
+#top_link {
+  color: darkgray;
+  text-decoration: underline;
+}
+
 footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
