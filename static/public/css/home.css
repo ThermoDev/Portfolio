@@ -36,7 +36,7 @@ body {
       rgba(0, 0, 0, 0.5) 75%,
       rgba(0, 0, 0, 1) 100%
     ),
-    url('https://i.imgur.com/jbhG8k4.jpg');
+    url("../images/background-min.jpg");
   background-color: black;
   background-position: center;
   text-align: center;
@@ -115,6 +115,7 @@ p {
 .title {
   text-align: center;
   padding-bottom: 25px;
+  margin-top:25px;
 }
 
 /* Conforms the form to have a smaller width */
@@ -156,4 +157,13 @@ footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-top: 3rem;
+}
+
+.project > p {
+  max-width:450px;
+  margin: 0 auto 1rem auto;
+}
+
+.project > h3 {
+  margin-top: 10px;
 }
