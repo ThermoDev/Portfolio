@@ -6,3 +6,9 @@ data.sqlite
 
 # Config File
 config.py
+
+# Error Log File
+log.txt
+
+# Any zip file
+*.zip

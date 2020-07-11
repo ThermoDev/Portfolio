@@ -1,4 +1,4 @@
-import os
+import os, logging
 from config import Config
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
@@ -41,7 +41,7 @@ class Contact(db.Model):
 
 # Deliver the email to our fake SMTP mailtrap client
 def deliver_email(name, email, message):
-    port = 2525  # Mailtrap port
+    port = 465  # Mailtrap port
     smtp_server = "smtp.mailtrap.io"
     login = app.config["MAIL_USERNAME"]
     password = app.config["MAIL_PASSWORD"]
@@ -62,6 +62,7 @@ def deliver_email(name, email, message):
 
     # Send the email
     with smtplib.SMTP(smtp_server, port) as server:
+        server.starttls()
         server.login(login, password)
         server.sendmail(sender_email, receiver_email, msg.as_string())
 
@@ -106,6 +107,9 @@ def index():
             session["alert"] = "danger"
             session["details"] = "An error has occurred. Please try again."
             print(e)
+            f = open("log.txt", "w")
+            f.write(f"Exception occurred: {e}")
+            f.close()
             return redirect(url_for("index"))
 
     return render_template("index.html", alert=alert, details=details)
