@@ -2,12 +2,18 @@
 {% set index =  True %}
 {% set active = 'home' %}
 {% block content%}
+
 <div id="main">
     <div id="main_cell">
+        {% if alert and details %}
+        <div class="alert alert-{{ alert }}" role="alert">
+            {{details}}
+        </div>
+        {% endif %}
         <h1 id="index_title">Welcome to my Portfolio!</h1>
         <h3 id="sub_index_title" class="ui container">
             Hi, I'm Michael Pegios!
-            I am a Software Engineer and a Computer Science graduate from UNSW. 
+            I am a Software Engineer and a Computer Science graduate from UNSW.
         </h3>
         <a href="#projects">
             <button id="project_link" type="button" class="btn btn-dark">View Projects</button>
@@ -22,8 +28,8 @@
         <div class="row middle-text">
             <div class="bd-example col-sm">
                 <a href="https://thermodev.github.io/video-search/" target="_blank">
-                    
-                    <img class="img-fluid" src="{{ url_for('static', filename='public/images/projects/video-search/project.webp') }}">
+                    <img class="img-fluid"
+                        src="{{ url_for('static', filename='public/images/projects/video-search/project.webp') }}">
                 </a>
             </div>
             <div class="col-sm project">
@@ -48,7 +54,8 @@
         <div class="row middle-text">
             <div class="bd-example col-sm">
                 <a href="https://thermo-vue-todo.netlify.app/" target="_blank">
-                    <img class="img-fluid" src="{{ url_for('static', filename='public/images/projects/vue-todo/project.webp') }}">
+                    <img class="img-fluid"
+                        src="{{ url_for('static', filename='public/images/projects/vue-todo/project.webp') }}">
                 </a>
             </div>
             <div class="col-sm project">
@@ -78,15 +85,15 @@
 <div id="form" class="home-contents">
     <h1 class="title">Contact Me!</h1>
     <div class="container">
-        <form class="form-horizontal" action="/">
+        <form class="form-horizontal" action="/" method="POST">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Name" for="name" required>
+                <input type="text" class="form-control" placeholder="Name" for="name" name="name" required>
             </div>
             <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email" for="email" required>
+                <input type="email" class="form-control" placeholder="Email" for="email" name="email" required>
             </div>
             <div class="input-group mb-3">
-                <textarea class="form-control" placeholder="Message" required></textarea>
+                <textarea class="form-control" placeholder="Message" name="message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary float-right">Submit</button>
         </form>
