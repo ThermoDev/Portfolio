@@ -46,7 +46,7 @@ def deliver_email(name, email, message):
     login = app.config["MAIL_USERNAME"]
     password = app.config["MAIL_PASSWORD"]
     message = (
-        f"<h2>New Email Received From Contact Form</h2> <ul>"
+        f"<h3>You got mail!</h3> <ul>"
         f"<li>Name: {name}</li>"
         f"<li>Email: {email}</li>"
         f"<li>Message: {message}</li>"
@@ -56,7 +56,7 @@ def deliver_email(name, email, message):
     sender_email = email
     receiver_email = "michael.pegios@hotmail.com"
     msg = MIMEText(message, "html")
-    msg["Subject"] = "Portfolio Contact"
+    msg["Subject"] = f"New Contact Email from {name}"
     msg["From"] = sender_email
     msg["To"] = receiver_email
 
