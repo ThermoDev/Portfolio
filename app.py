@@ -1,18 +1,20 @@
 import os
+from config import Config
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
-
-
-# Our base directory where our DB will be stored
-basedir = os.path.abspath(os.path.dirname(__file__))
+import smtplib
+from email.mime.text import MIMEText
 
 app = Flask(__name__)
-app.secret_key = "SECRET_KEY"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "data.sqlite")
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+# Load configs from config.py
+app.config.from_object(Config)
 
 # Create our DB from our app configs we set up
 db = SQLAlchemy(app)
+
+# Reusable set up for creating tables in our Database
+db.create_all()
 
 # Class for our Contact inheriting from our Model to set up a table in our db
 class Contact(db.Model):
@@ -36,8 +38,32 @@ class Contact(db.Model):
         new_line = "\n"
         return f"Contact {self.name} with email {self.email} has sent a Message: {self.message} {new_line}"
 
-# Reusable set up for creating tables in our Database
-db.create_all()
+
+# Deliver the email to our fake SMTP mailtrap client
+def deliver_email(name, email, message):
+    port = 2525  # Mailtrap port
+    smtp_server = "smtp.mailtrap.io"
+    login = app.config["MAIL_USERNAME"]
+    password = app.config["MAIL_PASSWORD"]
+    message = (
+        f"<h2>New Email Received From Contact Form</h2> <ul>"
+        f"<li>Name: {name}</li>"
+        f"<li>Email: {email}</li>"
+        f"<li>Message: {message}</li>"
+        f"</ul>"
+    )
+
+    sender_email = email
+    receiver_email = "michael.pegios@hotmail.com"
+    msg = MIMEText(message, "html")
+    msg["Subject"] = "Portfolio Contact"
+    msg["From"] = sender_email
+    msg["To"] = receiver_email
+
+    # Send the email
+    with smtplib.SMTP(smtp_server, port) as server:
+        server.login(login, password)
+        server.sendmail(sender_email, receiver_email, msg.as_string())
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -67,8 +93,12 @@ def index():
                 db.session.add(Contact(name, email, message))
                 # Commit to DB
                 db.session.commit()
+
+                # Sends email to Mailtrap
+                deliver_email(name, email, message)
+
                 session["alert"] = "success"
-                session["details"] = "Thank you for contacting me!"
+                session["details"] = "Thank you for contacting me! I will get back to you shortly."
 
             return redirect(url_for("index"))
 

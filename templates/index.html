@@ -85,7 +85,7 @@
 <div id="form" class="home-contents">
     <h1 class="title">Contact Me!</h1>
     <div class="container">
-        <form class="form-horizontal" action="/" method="POST">
+        <form class="form-horizontal" action="/" method="POST" onsubmit="submit_show()">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Name" for="name" name="name" required>
             </div>
@@ -95,9 +95,20 @@
             <div class="input-group mb-3">
                 <textarea class="form-control" placeholder="Message" name="message" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary float-right">Submit</button>
+            <button id="submit" type="submit" class="btn btn-primary float-right" >Submit</button>
+            <button id="loading_button" class="btn btn-primary float-right" hidden type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Submitting...
+            </button>
         </form>
     </div>
 </div>
+
+<script>
+    function submit_show() {
+            document.getElementById("loading_button").hidden = false;
+            document.getElementById("submit").hidden = true;
+        }
+</script>
 
 {% endblock content %}

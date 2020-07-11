@@ -3,3 +3,6 @@ __pycache__/
 
 # SQLite File
 data.sqlite
+
+# Config File
+config.py
