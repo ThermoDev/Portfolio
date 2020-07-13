@@ -18,6 +18,9 @@ body {
   .navbar.navbar-expand-md.navbar-dark.fixed-top {
     background-color: black !important;
   }
+  .navbar.navbar-expand-md.navbar-dark.fixed-top a {
+    margin-right: 0;
+  }
 }
 
 /* Main Content for the Index Page */
@@ -94,12 +97,14 @@ p {
 #project_link {
   font-size: 150%;
   border: 1px solid #ccc;
+  margin-bottom: 55px;
 }
 
 #index_title {
   color: white;
   text-shadow: 4px 4px black;
   font-weight: 700;
+  margin-top: 55px;
 }
 
 /* Sub Index Title Styling */
