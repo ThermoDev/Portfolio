@@ -39,7 +39,7 @@ body {
       rgba(0, 0, 0, 0.5) 75%,
       rgba(0, 0, 0, 1) 100%
     ),
-    url("../images/background-min.jpg");
+    url('../images/background-min.jpg');
   background-color: black;
   background-position: center;
   text-align: center;
@@ -120,7 +120,7 @@ p {
 .title {
   text-align: center;
   padding-bottom: 25px;
-  margin-top:25px;
+  margin-top: 25px;
 }
 
 /* Conforms the form to have a smaller width */
@@ -149,7 +149,7 @@ textarea.form-control {
   transition-timing-function: linear;
 }
 
-#top_link:hover{
+#top_link:hover {
   color: white;
 }
 
@@ -165,10 +165,14 @@ footer {
 }
 
 .project > p {
-  max-width:450px;
+  max-width: 450px;
   margin: 0 auto 1rem auto;
 }
 
 .project > h3 {
   margin-top: 10px;
+}
+
+.btn.btn-primary {
+  margin: 10px;
 }

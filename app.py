@@ -41,7 +41,7 @@ class Contact(db.Model):
 
 # Deliver the email to our fake SMTP mailtrap client
 def deliver_email(name, email, message):
-    port = 465  # Mailtrap port
+    port = 587  # Default SMTP port
     smtp_server = "smtp.mailtrap.io"
     login = app.config["MAIL_USERNAME"]
     password = app.config["MAIL_PASSWORD"]
@@ -52,7 +52,7 @@ def deliver_email(name, email, message):
         f"<li>Message: {message}</li>"
         f"</ul>"
     )
-
+    
     sender_email = email
     receiver_email = "michael.pegios@hotmail.com"
     msg = MIMEText(message, "html")
